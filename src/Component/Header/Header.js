@@ -78,10 +78,10 @@ const Header = () => {
                                     </div>
                                     <ul>
                                         <li >
-                                            <a href="/signup">Đăng nhập</a>
+                                            <a href="#/signup/">Đăng nhập</a>
                                         </li>
                                         <li >
-                                            <a href="/login">Đăng ký</a>
+                                            <a href="#/login/">Đăng ký</a>
                                         </li>
                                     </ul>
                                 </div>) : (<div className="user d-flex align-items-ct">
@@ -96,7 +96,7 @@ const Header = () => {
                                     </ul>
                                 </div>)}
                                 <div className='cart-info hidden-xs'>
-                                    <a className="cart-link" href="/cart">
+                                    <a className="cart-link" href="#/cart">
                                         <span className="icon-cart">
                                         </span>
                                         <div className="cart-number">
@@ -140,7 +140,7 @@ const Header = () => {
                                     </a>
                                 </div>
                                 <div className="evo-flexitem evo-flexitem-fill visible-sm visible-xs">
-                                    <a className="cart " href="/cart">
+                                    <a className="cart " href="#/cart">
                                         <i className="fa fa-cart-arrow-down"></i>
                                         <span className="count_item_pr">   {cartProduct.cartNumber}</span>
                                     </a >
@@ -168,7 +168,7 @@ const Header = () => {
                                     </a>
                                 </li>) : (<li className="nav-item ">
                                     <a className="nav-link " >
-                                        <img src='https://mcdn.nhanh.vn/store/18131/ps/20171117/22228659_1958158637798279_6481759436594791816_n_552x640.jpg' className='img-user'/>
+                                        <img src='https://mcdn.nhanh.vn/store/18131/ps/20171117/22228659_1958158637798279_6481759436594791816_n_552x640.jpg' className='img-user' />
                                     </a>
                                 </li>)}
                                 <li className='nav-item has-childs'>
@@ -190,8 +190,8 @@ const Header = () => {
                             </ul>
                             {
                                 userPage.userId === null ? (<ul className='header-login'>
-                                    <li><a className="reg" title="Đăng ký" href='/login'>Đăng ký</a></li>
-                                    <li><a className="log" title="Đăng nhập" href='/signup'>Đăng nhập</a></li>
+                                    <li><a className="reg" title="Đăng ký" href='#/login'>Đăng ký</a></li>
+                                    <li><a className="log" title="Đăng nhập" href='#/signup'>Đăng nhập</a></li>
                                 </ul>) : (<ul className='header-login'>
                                     <li><a onClick={handLogout} className="log" title="Đăng xuất"><i className="fa-solid fa-right-from-bracket"></i>Đăng xuất</a></li>
                                 </ul>)
