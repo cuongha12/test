@@ -158,7 +158,10 @@ const Form = () => {
                     <div className="form-button">
                       <button type="submit">login</button>
                       <p>Bạn có tài khoản chưa?
-                        <a href='signup'>Đăng nhập</a>
+                        <a onClick={(e) => {
+                          e.preventDefault()
+                          navigate('/signup')
+                        }}>Đăng nhập</a>
                       </p>
                     </div>
                   </form>
