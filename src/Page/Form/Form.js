@@ -160,7 +160,7 @@ const Form = () => {
                       <p>Bạn có tài khoản chưa?
                         <a onClick={(e) => {
                           e.preventDefault()
-                          navigate('/#/login')
+                          navigate('/signup')
                         }}>Đăng nhập</a>
                       </p>
                     </div>

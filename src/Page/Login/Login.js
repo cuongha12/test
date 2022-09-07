@@ -113,7 +113,7 @@ const Login = () => {
                       <p>Bạn có tài khoản chưa?
                         <a onClick={(e) => {
                           e.preventDefault()
-                          navigate('/#/login')
+                          navigate('/login')
                         }}>Đăng kí</a>
                       </p>
                     </div>
