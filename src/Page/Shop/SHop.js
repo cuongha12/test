@@ -18,7 +18,7 @@ const SHop = () => {
 
   const number = [1, 2, 3]
   const Product = async () => {
-    return await axios.get('http://localhost:3000/product?_page&_limit=12')
+    return await axios.get('https://orangic-server.herokuapp.com/product?_page&_limit=12')
       .then(res => setProduct(res.data))
   }
   useEffect(() => {

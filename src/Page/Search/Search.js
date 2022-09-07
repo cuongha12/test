@@ -8,7 +8,7 @@ const Search = () => {
     let { id } = useParams()
     const [product, setProduct] = useState([])
     const Product = async () => {
-        return await axios.get(`http://localhost:3000/product?q=${id.toLowerCase()}`)
+        return await axios.get(`https://orangic-server.herokuapp.com/product?q=${id.toLowerCase()}`)
             .then(res => setProduct(res.data))
     }
     useEffect(() => {

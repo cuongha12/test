@@ -12,7 +12,7 @@ const Form = () => {
   const dispatch = useDispatch()
   const [product, setProduct] = useState([])
   const User = async () => {
-    return await axios.get('http://localhost:3000/user')
+    return await axios.get('https://orangic-server.herokuapp.com/user')
       .then(res => setProduct(res.data))
   }
   useEffect(() => {
@@ -59,7 +59,7 @@ const Form = () => {
         icon: "success",
         button: "Ok!",
       });
-      const userCard = await axios.post('http://localhost:3000/user',
+      const userCard = await axios.post('https://orangic-server.herokuapp.com/user',
         formik.values)
       dispatch(createUser(product))
       navigate('/signup')

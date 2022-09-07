@@ -12,7 +12,7 @@ const Login = () => {
   let navigate = useNavigate()
   const [formData, setFormData] = useState([])
   const User = async () => {
-    return await axios.get('http://localhost:3000/user')
+    return await axios.get('https://orangic-server.herokuapp.com/user')
       .then(res => setFormData(res.data))
   }
   useEffect(() => {
