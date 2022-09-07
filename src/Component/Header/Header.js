@@ -36,6 +36,7 @@ const Header = () => {
     const handLogout = () => {
         dispatch(RemoveUserToLocalStorage(null))
         dispatch(removeFromCart([]))
+        navigate('/#/')
     }
     return (
         <>
@@ -50,8 +51,14 @@ const Header = () => {
                                             <li>
                                                 <a href="#"><i className="fa fa-phone" aria-hidden="true"></i>1900.636.099</a>
                                             </li>
-                                            <li><a className="reg" href="/account/register" title="Đăng ký">ĐĂNG KÝ</a></li>
-                                            <li><a className="log" href="/account/login" title="Đăng nhập">Đăng nhập</a></li>
+                                            <li><a className="reg" title="Đăng ký" onClick={(e) => {
+                                                e.preventDefault()
+                                                navigate('/login')
+                                            }}>ĐĂNG KÝ</a></li>
+                                            <li><a className="log" title="Đăng nhập" onClick={(e) => {
+                                                e.preventDefault()
+                                                navigate('/signup')
+                                            }}>Đăng nhập</a></li>
                                         </ul>
                                     </nav>
                                     <div className="header_line"><p>Miễn phí vận chuyển<span className="mar-l5">ĐƠN HÀNG TRÊN 900K</span></p></div>
@@ -63,7 +70,7 @@ const Header = () => {
                             <div className='row'>
                                 <div className='col-lg-12 col-md-12 col-sm-7 col-xs-7'>
                                     <h1>
-                                        <a href="/">
+                                        <a href="/#/">
                                             <img src="//hstatic.net/349/1000150349/1000203344/logo.png?v=28" alt="default-fresh-food" className="img-responsive logoimg" />
                                         </a>
                                     </h1>
@@ -78,10 +85,16 @@ const Header = () => {
                                     </div>
                                     <ul>
                                         <li >
-                                            <a href="#/signup/">Đăng nhập</a>
+                                            <a onClick={(e) => {
+                                                e.preventDefault()
+                                                navigate('/signup')
+                                            }}>Đăng nhập</a>
                                         </li>
                                         <li >
-                                            <a href="#/login/">Đăng ký</a>
+                                            <a onClick={(e) => {
+                                                e.preventDefault()
+                                                navigate('/login')
+                                            }}>Đăng ký</a>
                                         </li>
                                     </ul>
                                 </div>) : (<div className="user d-flex align-items-ct">
@@ -90,13 +103,16 @@ const Header = () => {
                                     </div>
                                     <ul>
                                         <li >
-                                            <a onClick={handLogout}>Đăng xuất</a>
+                                            <a onClick={handLogout} >Đăng xuất</a>
                                         </li>
 
                                     </ul>
                                 </div>)}
                                 <div className='cart-info hidden-xs'>
-                                    <a className="cart-link" href="#/cart">
+                                    <a className="cart-link" onClick={(e) => {
+                                        e.preventDefault()
+                                        navigate('/cart')
+                                    }}>
                                         <span className="icon-cart">
                                         </span>
                                         <div className="cart-number">
@@ -135,12 +151,15 @@ const Header = () => {
                                     <span className="icon-bar"></span>
                                 </button>
                                 <div className="logo evo-flexitem evo-flexitem-fill">
-                                    <a href="/" className="logo-wrapper" >
+                                    <a href="/#/" className="logo-wrapper" >
                                         <img src="https://hstatic.net/349/1000150349/1000203344/logo.png?v=28" className="img-responsive center-block" />
                                     </a>
                                 </div>
                                 <div className="evo-flexitem evo-flexitem-fill visible-sm visible-xs">
-                                    <a className="cart " href="#/cart">
+                                    <a className="cart " onClick={(e) => {
+                                        e.preventDefault()
+                                        navigate('/cart')
+                                    }}>
                                         <i className="fa fa-cart-arrow-down"></i>
                                         <span className="count_item_pr">   {cartProduct.cartNumber}</span>
                                     </a >
@@ -190,8 +209,14 @@ const Header = () => {
                             </ul>
                             {
                                 userPage.userId === null ? (<ul className='header-login'>
-                                    <li><a className="reg" title="Đăng ký" href='#/login'>Đăng ký</a></li>
-                                    <li><a className="log" title="Đăng nhập" href='#/signup'>Đăng nhập</a></li>
+                                    <li><a className="reg" title="Đăng ký" onClick={(e) => {
+                                        e.preventDefault()
+                                        navigate('/login')
+                                    }}>Đăng ký</a></li>
+                                    <li><a className="log" title="Đăng nhập" onClick={(e) => {
+                                        e.preventDefault()
+                                        navigate('/signup')
+                                    }}>Đăng nhập</a></li>
                                 </ul>) : (<ul className='header-login'>
                                     <li><a onClick={handLogout} className="log" title="Đăng xuất"><i className="fa-solid fa-right-from-bracket"></i>Đăng xuất</a></li>
                                 </ul>)
