@@ -70,8 +70,11 @@ const Header = () => {
                             <div className='row'>
                                 <div className='col-lg-12 col-md-12 col-sm-7 col-xs-7'>
                                     <h1>
-                                        <a href="/#/">
-                                            <img src="//hstatic.net/349/1000150349/1000203344/logo.png?v=28" alt="default-fresh-food" className="img-responsive logoimg" />
+                                        <a onClick={(e) => {
+                                                e.preventDefault()
+                                                navigate('/')
+                                            }}>
+                                            <img src="https://hstatic.net/349/1000150349/1000203344/logo.png?v=28" alt="default-fresh-food" className="img-responsive logoimg" />
                                         </a>
                                     </h1>
                                 </div>
@@ -151,7 +154,10 @@ const Header = () => {
                                     <span className="icon-bar"></span>
                                 </button>
                                 <div className="logo evo-flexitem evo-flexitem-fill">
-                                    <a href="/#/" className="logo-wrapper" >
+                                    <a onClick={(e) => {
+                                        e.preventDefault()
+                                        navigate('/')
+                                    }} className="logo-wrapper" >
                                         <img src="https://hstatic.net/349/1000150349/1000203344/logo.png?v=28" className="img-responsive center-block" />
                                     </a>
                                 </div>
